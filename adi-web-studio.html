@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ADI WEB STUDIO — Modern Websites</title>
+  <meta name="description" content="ADI WEB STUDIO creates clean, modern websites for small businesses.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      border-bottom: 1px solid #eeeeee;
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #666666;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 110px 0 100px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      color: #666666;
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 7px;
+      border: 1px solid #111111;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .btn-dark {
+      background: #111111;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #333333;
+    }
+
+    .btn-light {
+      background: white;
+    }
+
+    .btn-light:hover {
+      background: #f5f5f5;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #777777;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 25px;
+      transition: 0.2s;
+      background: #ffffff;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .project-number {
+      font-size: 12px;
+      color: #888888;
+      margin-bottom: 35px;
+    }
+
+    .project h3 {
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .project p {
+      color: #777777;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .project a {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #f7f7f7;
+    }
+
+    .about-content {
+      max-width: 700px;
+    }
+
+    .about h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #666666;
+      font-size: 17px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      border-top: 2px solid #111111;
+      padding-top: 18px;
+    }
+
+    .service h3 {
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: #777777;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .contact h2 {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #777777;
+      margin-bottom: 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #eeeeee;
+      padding: 25px 0;
+      color: #888888;
+      font-size: 13px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .projects,
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      footer .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">ADI WEB STUDIO</a>
+
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <h1>Modern websites<br>for small businesses.</h1>
+
+        <p>
+          Clean, responsive websites designed to help businesses
+          look professional online.
+        </p>
+
+        <div class="buttons">
+          <a href="#work" class="btn btn-dark">View My Work</a>
+          <a href="#contact" class="btn btn-light">Contact Me</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="work">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>My Projects</h2>
+          <p>A selection of website concepts and demos.</p>
+        </div>
+
+        <div class="projects">
+
+          <!-- PROJECT 1 -->
+
+          <div class="project">
+
+            <div class="project-number">01 / BUSINESS</div>
+
+            <h3>NEXORA</h3>
+
+            <p>
+              Modern business solutions website designed
+              for a growing company.
+            </p>
+
+            <!-- ADD NEXORA LINK LATER -->
+            <a href="#" onclick="alert('NEXORA project will be connected next!')">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <!-- PROJECT 2 -->
+
+          <div class="project">
+
+            <div class="project-number">02 / RESTAURANT</div>
+
+            <h3>Café Demo</h3>
+
+            <p>
+              Clean restaurant website concept with menu,
+              information and contact sections.
+            </p>
+
+            <!-- ADD CAFE LINK LATER -->
+            <a href="#" onclick="alert('Café Demo will be created next!')">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <!-- PROJECT 3 -->
+
+          <div class="project">
+
+            <div class="project-number">03 / AUTOMOTIVE</div>
+
+            <h3>AutoCare</h3>
+
+            <p>
+              Professional website concept for a modern
+              car service business.
+            </p>
+
+            <!-- ADD AUTOCARE LINK LATER -->
+            <a href="#" onclick="alert('AutoCare will be created next!')">
+              View Project →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about">
+      <div class="container">
+
+        <div class="about-content">
+
+          <h2>Simple websites that work.</h2>
+
+          <p>
+            ADI WEB STUDIO focuses on creating clean,
+            responsive and easy-to-use websites for
+            small businesses and independent brands.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>What I Do</h2>
+          <p>Website services for businesses that want a better online presence.</p>
+        </div>
+
+        <div class="services">
+
+          <div class="service">
+            <h3>Business Websites</h3>
+            <p>
+              Professional websites for companies,
+              services and small businesses.
+            </p>
+          </div>
+
+          <div class="service">
+            <h3>Responsive Design</h3>
+            <p>
+              Websites designed to work properly
+              on phones, tablets and computers.
+            </p>
+          </div>
+
+          <div class="service">
+            <h3>Website Refresh</h3>
+            <p>
+              Modernising older websites with cleaner
+              layouts and better user experiences.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+      <div class="container">
+
+        <h2>Need a website?</h2>
+
+        <p>
+          Let's create something professional for your business.
+        </p>
+
+        <!-- Replace # with your real contact link later -->
+        <a href="#" class="btn btn-dark"
+           onclick="alert('Contact details will be added soon!')">
+          Contact Me
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+
+      <span>© 2026 ADI WEB STUDIO</span>
+
+      <span>Websites for small businesses.</span>
+
+    </div>
+  </footer>
+
+
+</body>
+</html>
